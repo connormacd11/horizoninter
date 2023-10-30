@@ -3,23 +3,23 @@ export const testimonialSlider = [
   {
     image: '/t-avt-1.png',
     name: 'Anne Smith',
-    position: 'Customer',
+    position: 'CEO of "Bridge Designs"',
     message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+      'Incredible attention to detail. They not only met our expectations but exceeded them. A reliable partner for any digital project.',
   },
   {
     image: '/t-avt-2.png',
-    name: 'Jane Doe',
-    position: 'Customer',
+    name: 'Jane Elliot',
+    position: 'Owner of Tamga Fashion',
     message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+      "Efficient, professional, and a pleasure to work with. They delivered results on time and on budget. Couldn't be happier with outcome!",
   },
   {
     image: '/t-avt-3.png',
-    name: 'Jhon Doe',
+    name: 'Blair MacDonald',
     position: 'Customer',
     message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+      'In a digital world filled with noise, they helped us stand out. Our brand has never looked better, thanks to their creative touch.',
   },
 ];
 
@@ -52,7 +52,7 @@ const TestimonialSlider = () => {
       {testimonialSlider.map((person, index) => {
         return (
           <SwiperSlide key={index}>
-            <div className='flex flex-col items-center md:flex-row gap-x-8 h-full px-16'>
+            <div className=' flex flex-col items-center md:flex-row gap-x-8 h-full px-16'>
               {/* avatar, name, position */}
               <div className='w-full max-w-[300px] flex flex-col xl:justify-center items-center relative mx-auto xl:mx-0'>
                 <div className='flex flex-col justify-center text-center'>
@@ -74,8 +74,8 @@ const TestimonialSlider = () => {
                 <div className='mb-4'>
                   <FaQuoteLeft className='text-4xl xl:text-6xl text-white/20 mx-auto md:mx-0' />
                 </div>
-                {/* message */}
-                <div className='xl:text-lg text-center md:text-left'>
+                {/* message with light transparent background */}
+                <div className='xl:text-lg text-center md:text-left bg-black bg-opacity-40 p-3 rounded-lg'>
                   {person.message}
                 </div>
               </div>

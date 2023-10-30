@@ -1,21 +1,16 @@
-// next image
 import Image from 'next/image';
-
-// next link
 import Link from 'next/link';
-
-// icons
 import { HiArrowRight } from 'react-icons/hi2';
 
 const ProjectsBtn = () => {
   return (
-    <div className='mx-auto xl:mx-0 z-10'>
+    <div className='mx-auto xl:mx-0 z-10' style={{ position: 'relative', top: '-20px' }}>
       <Link
-        href={'/work'}
+        href={'/services'}
         className='relative w-[185px] h-[185px] flex justify-center items-center bg-circleStar bg-cover bg-center bg-no-repeat group'
       >
         <Image
-          src={'/rounded-text.png'}
+          src={'/rounded-text3.png'}
           width={141}
           height={148}
           alt=''

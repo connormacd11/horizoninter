@@ -1,0 +1,14 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="480" height="480">
+	<title>h-pdf</title>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m0 0h480v480h-480z"/>
+		</clipPath>
+	</defs>
+	<style>
+		.s0 { fill: #ffffff } 
+	</style>
+	<g id="Page 1" clip-path="url(#cp1)">
+		<path id="Path 5" class="s0" d="m216.9 178h145.8c19.8 0 35.9 18.7 35.9 41.5v41.9 13 113.2c6.3 43.4 43.7 56.7 72.2 74h-72.2-56.2c-20.8 0-37.8-19.7-37.8-43.7v-135l-7-8.5h-80.7zm-46 210.3c6.3 43.4 43.7 56.7 72.2 74h-72.2-56.2c-20.8 0-37.8-19.7-37.8-43.7 0-112.2-0.7-224.3-0.7-336.5-6.3-43.4-43.7-56.7-72.2-74h72.2 56.2c20.8 0 37.8 19.6 37.8 43.7 0 112.2 0.7 224.2 0.7 336.5z"/>
+	</g>
+</svg>

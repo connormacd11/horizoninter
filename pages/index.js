@@ -1,23 +1,46 @@
-// next image
+import React, { useCallback, useEffect } from 'react';
+import { Particles } from 'react-tsparticles';
+import { loadFull } from 'tsparticles';
 import Image from 'next/image';
-
-// components
 import ParticlesContainer from '../components/ParticlesContainer';
 import ProjectsBtn from '../components/ProjectsBtn';
 import Avatar from '../components/Avatar';
-
-// framer motion
 import { motion } from 'framer-motion';
-
-// variants
 import { fadeIn } from '../variants';
+import Footer from '../components/Footer';
+
+
+
+// Import your "horbg1" image
+import horinter11 from '../public/horinter11.png'; // Adjust the path accordingly
 
 const Home = () => {
+  const particlesInit = useCallback(async (engine) => {
+    await loadFull(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(async (container) => {
+    // Optional: You can add custom logic after particles are loaded if needed
+  }, []);
+
+  useEffect(() => {
+    // Optional: You can perform additional setup or actions here
+  }, []);
+
   return (
-    <div className='bg-primary/60 h-full'>
+    <div
+      style={{
+        backgroundImage: `url(${horinter11})`, // Set your background image here
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed', // Optional: Fixed background
+        width: '100%',
+        height: '100vh',
+      }}
+    >
       {/* text */}
       <div className='w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10'>
-        <div className='text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto'>
+      <div className='text-center flex flex-col justify-start xl:-mt-32 xl:pt-48 xl:text-left h-full container mx-auto'>
           {/* title */}
           <motion.h1
             variants={fadeIn('down', 0.2)}
@@ -26,8 +49,8 @@ const Home = () => {
             exit='hidden'
             className='h1'
           >
-            Transforming Ideas <br /> Into{' '}
-            <span className='text-accent'>Digital Reality</span>
+            Your Compass In<br /> The{' '}
+            <span className='text-accent'>Digital Universe</span>
           </motion.h1>
           {/* subtitle */}
           <motion.p
@@ -37,9 +60,7 @@ const Home = () => {
             exit='hidden'
             className='max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16'
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-            nostrum quam reprehenderit vero, tenetur voluptatem nulla aut
-            aspernatur dolores ut.
+            With expert guidance in branding, design, advertising, and web & app development, we illuminate your path, helping you avoid pitfalls and capitalize on opportunities. Think of us as your steadfast partner, providing clarity, direction, and innovative solutions tailored to your unique needs in the digital realm. Your vision, our expertise—let’s explore the possibilities together.
           </motion.p>
           {/* btn */}
           <div className='flex justify-center xl:hidden relative'>
@@ -58,8 +79,6 @@ const Home = () => {
       </div>
       {/* image */}
       <div className='w-[1200px] h-full absolute right-0 bottom-0'>
-        {/* bg img */}
-        <div className='bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0'></div>
         {/* particles */}
         <ParticlesContainer />
         {/* avatar img */}
@@ -69,13 +88,19 @@ const Home = () => {
           animate='show'
           exit='hidden'
           transition={{ duration: 1, ease: 'easeInOut' }}
-          className='w-full h-full max-w-[737px] max-h-[678px] absolute -bottom-32 lg:bottom-0 lg:right-[8%]'
+          className='w-full h-full lg:block md:hidden sl:hidden'
         >
+          
           <Avatar />
+        
         </motion.div>
       </div>
-    </div>
+      <Footer />
+      </div>
+
   );
 };
 
 export default Home;
+
+

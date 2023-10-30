@@ -1,12 +1,9 @@
-// import swiper react components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// import swiper styles
+import Link from 'next/link';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 
-// icons
 import {
   RxCrop,
   RxDesktop,
@@ -16,35 +13,38 @@ import {
   RxArrowTopRight,
 } from 'react-icons/rx';
 
-// import required modules
 import { FreeMode, Pagination } from 'swiper';
 
-// service data
 export const serviceData = [
   {
     icon: <RxCrop />,
     title: 'Branding',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description: 'Craft a compelling brand identity that resonates with your audience and sets you apart in the digital landscape.',
+    link: '/contact', // Add the link for the "Branding" page here
   },
   {
     icon: <RxPencil2 />,
     title: 'Design',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description: 'Create visually stunning designs that captivate and leave a lasting impression on your digital platforms.',
+    link: '/contact', // Add the link for the "Design" page here
   },
   {
     icon: <RxDesktop />,
     title: 'Development',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
-    icon: <RxReader />,
-    title: 'Copywriting',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description: 'Bring your digital vision to life with our expert web and app development services, ensuring functionality and user-friendliness.',
+    link: '/contact', // Add the link for the "Development" page here
   },
   {
     icon: <RxRocket />,
+    title: 'Digital Marketing',
+    description: 'Drive online growth and engagement through strategic digital marketing campaigns that deliver results.',
+    link: '/contact', // Add the link for the "Digital Marketing" page here
+  },
+  {
+    icon: <RxReader />,
     title: 'SEO',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description: 'Boost your online visibility and reach your target audience with our strategic SEO solutions.',
+    link: '/contact', // Add the link for the "SEO" page here
   },
 ];
 
@@ -56,7 +56,6 @@ const ServiceSlider = () => {
           slidesPerView: 1,
           spaceBetween: 15,
         },
-
         640: {
           slidesPerView: 3,
           spaceBetween: 15,
@@ -72,21 +71,18 @@ const ServiceSlider = () => {
       {serviceData.map((item, index) => {
         return (
           <SwiperSlide key={index}>
-            <div className='bg-[rgba(65,47,123,0.15)] h-max rounded-lg px-6 py-8 flex sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300'>
-              {/* icon */}
-              <div className='text-4xl text-accent mb-4'>{item.icon}</div>
-              {/* title & desc */}
-              <div className='mb-8'>
-                <div className='mb-2 text-lg'>{item.title}</div>
-                <p className='max-w-[350px] leading-normal'>
-                  {item.description}
-                </p>
+            <Link href={item.link}>
+              <div className='bg-[rgba(0,0,0,0.37)] h-max rounded-lg px-6 py-8 flex sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba(0,0,0,0.6)] transition-all duration-300'>
+                <div className='text-4xl text-accent mb-4'>{item.icon}</div>
+                <div className='mb-8'>
+                  <div className='mb-2 text-lg'>{item.title}</div>
+                  <p className='max-w-[350px] leading-normal'>{item.description}</p>
+                </div>
+                <div className='text-3xl'>
+                  <RxArrowTopRight className='group-hover:rotate-45 group-hover:text-accent transition-all duration-300' />
+                </div>
               </div>
-              {/* arrow */}
-              <div className='text-3xl'>
-                <RxArrowTopRight className='group-hover:rotate-45 group-hover:text-accent transition-all duration-300' />
-              </div>
-            </div>
+            </Link>
           </SwiperSlide>
         );
       })}
@@ -95,3 +91,4 @@ const ServiceSlider = () => {
 };
 
 export default ServiceSlider;
+

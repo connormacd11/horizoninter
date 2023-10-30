@@ -1,18 +1,25 @@
-// next image
 import Image from 'next/image';
 
 const Avatar = () => {
   return (
-    <div className='hidden xl:flex xl:max-w-none'>
+    <div
+      className='hidden xl:block fixed w-3/6'  // Use w-1/4 to make the avatar 25% of the viewport width, adjust as needed
+      style={{
+        left: '45%',
+        top: '18%',
+      }}
+    >
       <Image
-        src={'/avatar.png'}
-        width={737}
-        height={678}
-        alt=''
-        className='translate-z-0 w-full h-full'
+        src={'/neonsvg.svg'}
+        width={250}
+  height={90}
+        alt='Avatar'
+        className='w-full'  // Ensure image fills the container
       />
     </div>
   );
 };
+
+
 
 export default Avatar;

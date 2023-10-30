@@ -9,7 +9,7 @@ import { fadeIn } from '../../variants';
 
 const Services = () => {
   return (
-    <div className='h-full bg-primary/30 py-36 flex items-center'>
+    <div className='h-full bg-primary/30 py-6 flex items-center'>
       <Circles />
       <div className='container mx-auto'>
         <div className='flex flex-col xl:flex-row gap-x-8'>
@@ -20,9 +20,9 @@ const Services = () => {
               initial='hidden'
               animate='show'
               exit='hidden'
-              className='h2 xl:mt-8'
+              className='h2'
             >
-              My services <span className='text-accent'>.</span>
+              Our services <span className='text-accent'>.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn('up', 0.4)}
@@ -31,8 +31,7 @@ const Services = () => {
               exit='hidden'
               className='mb-4 max-w-[400px] mx-auto lg:mx-0'
             >
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. A
-              eveniet dignissimos distinctio tempore harum laudantium.
+             We provide a tailored suite of digital services, from captivating branding and design to effective advertising strategies. Our expertise extends to web and app development, ensuring both visual appeal and functionality. With a commitment to innovation, we help you thrive in the ever-evolving digital landscape.
             </motion.p>
           </div>
 
